@@ -80,4 +80,19 @@ int main() {
 	i = ci;							//ok: copying the calue of ci; top level const in ci ignored
 	p2 = p3;						//ok; pointed to type matches top level const in p3 is ignored
 
+	//int* p = p3;					//error: p3 has a low level const but p doesnot
+	p2 = p3;						//ok; p2 has the same low level const qualification as p3
+	p2 = &i;						//ok; we can convert int* to const int*
+	//  int& r = ci;					//error; cannot bind an ordinary int& to a const int object
+	const int& r2 = i;				//ok: can bind const int& to plain int
+
+	const int max_files = 20;		//max_files is a constant expression
+	const int limit = max_files + 1;	//limit is a constant expression
+	int staff_size = 27;		//staff_size is not a constant expression
+	//const int sz = get_size();		//sz is not a constant expression
+
+	constexpr int mf = 20;			//20 is a constant expression
+	constexpr int limit = mf + 1;	//mf + 1 is a constant expression
+	//constexpr int sz = size();		//ok only if size is a constexpr function
+
 }
