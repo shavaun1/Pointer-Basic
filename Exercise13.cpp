@@ -43,4 +43,21 @@ int main() {
 	void *pv = &obj; //obj can be object of any type 
 	pv = pd;		//pv can hold a pointer to any type
 
+		//i is an int; p is a pointer to int; r is a reference to int
+	int i = 1024, * p = &i, & r = i;
+	int* pl, p2;				//pl is a pointer to int; p2 is an int
+	int* p1, * p2;				// both p1 and p2 are pointers  to int
+
+	int* p1;					//p1 is a pointer to int
+	int* p2;					//p2 is a pointer to int
+
+	int ival = 1024;
+	int* pi = &ival;			//pi points to an int
+	int** ppi = &pi;			//ppi points to an int.
+
+	int i = 42;
+	int* p;						//p is a pointer to int
+	int*& r = p;				//r is a reference to the pointer p
+	//r = &i;						//r refers to a pointer ; assigning  &i to r makes p point to i
+
 }
